@@ -32,6 +32,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@babel/plugin-syntax-class-properties": "^7.12.13",
     "@babel/polyfill": "^7.12.1",
     "core-js": "^3.9.0",
     "normalize.css": "^8.0.1",
