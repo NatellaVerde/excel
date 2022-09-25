@@ -7,18 +7,6 @@ const CODE = {
     Z: 90
 }
 
-
-let developerName = 'Maxim'
-
-const setName = (entity, value) => {
-      console.log('ent1', entity, value)
-      developerName = value
-      console.log('ent2', entity, value)
-}
-setName(developerName, 'Max')
-console.log(developerName)
-
-
 function toColumn(el) {
     return `<div class="column">${el}</div>`
 }
