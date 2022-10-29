@@ -27,10 +27,17 @@ function createRow(content, idx = '') {
              `
 }
 
-function toCell(_, idx) {
-    return `<div class="cell" contenteditable data-col=${idx}>
-        </div>`
+function toCell(row) {
+    return function(_, idx) {
+        return `<div class="cell" 
+                    contenteditable 
+                    data-col=${idx} 
+                    data-id=${row}:${idx}
+                    data-type="cell"
+                    >
+                </div>`
     }
+}
 
 function table(rowsCount = 35) {
     const colsCount = CODE.Z - CODE.A + 1
@@ -41,13 +48,13 @@ function table(rowsCount = 35) {
         .map((el, idx) => toColumn(el, idx))
         .join(' ')
     rows.push(createRow(cols))
-    for (let i = 0; i < rowsCount; i++) {
+    for (let row = 0; row < rowsCount; row++) {
         // rows.push(createRow(i + 1))
         const cells = new Array(colsCount)
             .fill('')
-            .map((el, idx) => toCell(el, idx))
+            .map(toCell(row))
             .join(' ')
-        rows.push(createRow(cells, i + 1))
+        rows.push(createRow(cells, row + 1))
     }
     return rows.join(' ')
 }
