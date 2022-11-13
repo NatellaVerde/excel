@@ -14,7 +14,6 @@ function toolbarPic(button) {
 }
 
 export function toolbarCreate(state) {
-    console.log(state)
     const buttons = [
         {
             icon: 'format_align_left',
