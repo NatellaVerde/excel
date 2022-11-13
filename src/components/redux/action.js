@@ -1,7 +1,7 @@
 import {
     TABLE_RESIZE,
     TEXT_CHANGE,
-    STYLES_CHANGE, APPLY_STYLES, TITLE_CHANGE
+    STYLES_CHANGE, APPLY_STYLES, TITLE_CHANGE, UPDATE_TIME
 } from '@/components/redux/type';
 
 export function tableResize(data) {
@@ -22,4 +22,8 @@ export function applyStyle(data) {
 
 export function titleChange(data) {
     return {type: TITLE_CHANGE, data}
+}
+
+export function updateDataPage() {
+    return {type: UPDATE_TIME}
 }

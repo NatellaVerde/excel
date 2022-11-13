@@ -1,8 +1,10 @@
-import {APPLY_STYLES,
-        STYLES_CHANGE,
-        TABLE_RESIZE,
-        TEXT_CHANGE,
-        TITLE_CHANGE} from './type'
+import {
+    APPLY_STYLES,
+    STYLES_CHANGE,
+    TABLE_RESIZE,
+    TEXT_CHANGE,
+    TITLE_CHANGE, UPDATE_TIME
+} from './type'
 
 export function rootReducer(state, action) {
     let field
@@ -39,6 +41,11 @@ export function rootReducer(state, action) {
         case TITLE_CHANGE: {
             return state = {
                 ...state, titleApp: action.data
+            }
+        }
+        case UPDATE_TIME: {
+            return state = {
+                ...state, dateOpenedPage: new Date().toJSON()
             }
         }
         default:
